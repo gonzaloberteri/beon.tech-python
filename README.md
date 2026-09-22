@@ -2,7 +2,7 @@
 
 ```sh
 uv sync                    # creates .venv and installs deps
-uv run main.py             # http://127.0.0.1:8000/docs
+uv run main.py             # http://127.0.0.1:8000/scalar
 uv run pytest              # tests
 ```
 
