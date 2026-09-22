@@ -1,9 +1,12 @@
-# beon.tech-python
+<p align="center">
+  <a href="https://beon.tech"><img src="assets/beon-logo.svg" alt="BEON.tech" width="80"></a>
+</p>
+<h1 align="center"><a href="https://beon.tech">BEON.tech</a> RAG service</h1>
 
-RAG service: FastAPI + Postgres/pgvector + Ollama (local, no API key).
+Answers questions about [BEON.tech](https://beon.tech) from a small knowledge base. FastAPI + Postgres/pgvector + Ollama (local, no API key).
 
 ```sh
-docker compose up -d --build   # first run pulls models (~2.3 GB)
+docker compose up -d --build   # first run pulls ~2.3 GB of models
 uv run pytest                  # e2e tests against http://localhost:8000
 ```
 
