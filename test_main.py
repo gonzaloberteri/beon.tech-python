@@ -6,11 +6,11 @@ client = TestClient(app)
 
 
 def test_hello_default():
-    r = client.post("/hello", json={})
+    r = client.post("/", json={})
     assert r.status_code == 200
     assert r.json() == {"message": "Hello, World!"}
 
 
 def test_hello_name():
-    r = client.post("/hello", json={"name": "Gonza"})
+    r = client.post("/", json={"name": "Gonza"})
     assert r.json() == {"message": "Hello, Gonza!"}

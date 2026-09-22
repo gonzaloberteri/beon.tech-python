@@ -8,7 +8,7 @@ class HelloRequest(BaseModel):
     name: str = "World"
 
 
-@app.post("/hello")
+@app.post("/")
 def hello(body: HelloRequest) -> dict:
     return {"message": f"Hello, {body.name}!"}
 

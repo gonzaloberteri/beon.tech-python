@@ -3,8 +3,8 @@ name: beon.tech-python
 meta:
   id: wrk_beontech_python
 collection:
-  - url: "{{ _.base_url }}/hello"
-    name: POST /hello
+  - url: "{{ _.base_url }}/"
+    name: POST /
     meta:
       id: req_beontech_hello
     method: POST
