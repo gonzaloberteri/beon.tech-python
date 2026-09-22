@@ -5,12 +5,12 @@ from main import app
 client = TestClient(app)
 
 
-def test_hello_default():
+def test_root_default():
     r = client.post("/", json={})
     assert r.status_code == 200
     assert r.json() == {"message": "Hello, BEON.tech!"}
 
 
-def test_hello_name():
+def test_root_name():
     r = client.post("/", json={"name": "Gonza"})
     assert r.json() == {"message": "Hello, Gonza!"}

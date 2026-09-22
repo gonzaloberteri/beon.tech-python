@@ -5,12 +5,12 @@ from pydantic import BaseModel
 app = FastAPI(docs_url=None)
 
 
-class HelloRequest(BaseModel):
+class exampleRequest(BaseModel):
     name: str = "BEON.tech"
 
 
 @app.post("/")
-def hello(body: HelloRequest) -> dict:
+def root(body: exampleRequest) -> dict:
     return {"message": f"Hello, {body.name}!"}
 
 
