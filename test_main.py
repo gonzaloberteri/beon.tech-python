@@ -5,7 +5,12 @@ from main import app
 client = TestClient(app)
 
 
-def test_create_message():
-    r = client.post("/messages", json={"text": "hola"})
+def test_hello_default():
+    r = client.post("/hello", json={})
     assert r.status_code == 200
-    assert r.json() == {"received": "hola"}
+    assert r.json() == {"message": "Hello, World!"}
+
+
+def test_hello_name():
+    r = client.post("/hello", json={"name": "Gonza"})
+    assert r.json() == {"message": "Hello, Gonza!"}

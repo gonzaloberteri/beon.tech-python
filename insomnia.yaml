@@ -1,0 +1,25 @@
+type: collection.insomnia.rest/5.0
+name: beon.tech-python
+meta:
+  id: wrk_beontech_python
+collection:
+  - url: "{{ _.base_url }}/hello"
+    name: POST /hello
+    meta:
+      id: req_beontech_hello
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "name": "Gonza"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+environments:
+  name: Base Environment
+  meta:
+    id: env_beontech_base
+  data:
+    base_url: http://127.0.0.1:8000

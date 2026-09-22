@@ -4,13 +4,13 @@ from pydantic import BaseModel
 app = FastAPI()
 
 
-class Message(BaseModel):
-    text: str
+class HelloRequest(BaseModel):
+    name: str = "World"
 
 
-@app.post("/messages")
-def create_message(message: Message) -> dict:
-    return {"received": message.text}
+@app.post("/hello")
+def hello(body: HelloRequest) -> dict:
+    return {"message": f"Hello, {body.name}!"}
 
 
 if __name__ == "__main__":

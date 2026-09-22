@@ -7,5 +7,5 @@ uv run pytest              # tests
 ```
 
 ```sh
-curl -X POST localhost:8000/messages -H 'content-type: application/json' -d '{"text":"hola"}'
+curl -X POST localhost:8000/hello -H 'content-type: application/json' -d '{"name":"Gonza"}'
 ```
