@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from fastapi.responses import HTMLResponse
+from fastapi.responses import FileResponse
 from pydantic import BaseModel
 
 app = FastAPI(docs_url=None)
@@ -15,12 +15,8 @@ def root(body: exampleRequest) -> dict:
 
 
 @app.get("/docs", include_in_schema=False)
-def docs() -> HTMLResponse:
-    return HTMLResponse("""
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@stoplight/elements/styles.min.css">
-        <script src="https://cdn.jsdelivr.net/npm/@stoplight/elements/web-components.min.js"></script>
-        <elements-api apiDescriptionUrl="/openapi.json" router="hash" layout="sidebar"></elements-api>
-    """)
+def docs() -> FileResponse:
+    return FileResponse("docs.html")
 
 
 if __name__ == "__main__":
