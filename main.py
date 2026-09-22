@@ -11,3 +11,9 @@ class Message(BaseModel):
 @app.post("/messages")
 def create_message(message: Message) -> dict:
     return {"received": message.text}
+
+
+if __name__ == "__main__":
+    import uvicorn
+
+    uvicorn.run("main:app", reload=True)
