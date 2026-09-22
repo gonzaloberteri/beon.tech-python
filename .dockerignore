@@ -1,5 +1,5 @@
 .venv/
+.git/
 __pycache__/
-.env
 .pytest_cache/
-spec.pdf
+*.pdf
